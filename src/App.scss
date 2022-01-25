@@ -1,0 +1,32 @@
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
+ .App {
+   background-color: #C4C4C4;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+ }
+
+ .footer {
+   background-color: black;
+   height: 70px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   
+
+   p {
+     color: white;
+     font-weight: 900;
+   }
+
+   .footer__light {
+    font-weight: 600;
+    font-size: 0.8rem;
+   }
+ }

@@ -1,0 +1,17 @@
+.navbar {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    height: 70px;
+    text-transform: uppercase;
+
+    &__addAnime {
+        cursor: pointer;
+    }
+}

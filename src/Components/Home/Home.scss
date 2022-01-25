@@ -1,0 +1,24 @@
+.home {
+    background-color: #C4C4C4;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 3rem;
+        color: black;
+    }
+
+}
+
+.hey {
+    background-color: red;
+    min-height: 100vh;
+}
+
+
+
