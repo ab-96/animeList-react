@@ -8,6 +8,7 @@ import "./Dashboard.scss";
 
 const Dashboard = () => {
     const [animeList, setAnimeList] = useState([]);
+    const [completedList, setCompletedList] = useState([]);
 
 
     useEffect(() => {
@@ -22,21 +23,37 @@ const Dashboard = () => {
     }, []);
     console.log(animeList);
 
-    const allAnime = animeList.map(anime => {
+    useEffect(() => {
 
+    const URL = "http://localhost:8080/completed"
+    fetch(URL)
+        .then(response => {
+            return response.json()
+        }).then(animeObject => {
+            setCompletedList(animeObject);
+        });
+
+    }, []);
+    
+    const allAnime = animeList.map(anime => {
         if (anime.completed === true) {
-            return anime.completed = "Completed";
+            anime.completed = "Completed";
         } else if (anime.completed === false) {
-            return anime.completed = "Watching";
+            anime.completed = "Watching";
         }
         return <AnimeList title={anime.title} rating={anime.rating} completed={anime.completed} />
-
     })
+
+   
+
+    const handleList = () => {
+        setAnimeList(completedList);
+    }
 
     return (
         <div>
             <Home />
-            <Nav />
+            <Nav handleList={handleList}/>
             {/* <AnimeListForm /> */}
             <div className="wrapper">
                 {allAnime}
